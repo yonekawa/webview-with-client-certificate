@@ -1,0 +1,31 @@
+NAME
+    WebView with Client Certificate - WebView of Android enhanced
+    to use client certificate.
+
+SYNOPSIS
+    Please see HowToUseActivity.java.
+
+      ClientCertificateWebView webview = new ClientCertificateWebView(this);
+
+      ClientCertificate certificate = new ClientCertificate();
+      certificate.setPath( "/path/to/certificate" );
+      certificate.setPassword( "password" );
+      webview.useCertificate( certificate );
+      
+      webview.loadUrl( "url" );
+
+DESCRIPTION
+    Android Browser cannot use client certificate authentication.
+    Because the browser doesn't use a credential storage in Android OS.
+    This is knows issues on Android OS.
+    If you use client certificate for authentication, Android OS cannot be supported.
+    http://code.google.com/p/android/issues/detail?id=8196
+
+    WebView with Client Certificate solves it.
+    ClientCertificateWebView class can use a client certificate file for authentication.
+
+AUTHOR
+    Kenichi Yonekawa <tcgrim@gmail.com>
+
+LICENSE
+    This library is free software; you can redistribute it and/or modify it.
