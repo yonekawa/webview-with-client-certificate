@@ -31,8 +31,8 @@ If you want to use this by Android 4.x, you should use private API with original
 Please read this issue.
 https://github.com/yonekawa/webview-with-client-certificate/issues/1
 
-AUTHOR
-    Kenichi Yonekawa <tcgrim@gmail.com>
+## AUTHOR ##
+Kenichi Yonekawa <tcgrim@gmail.com>
 
-LICENSE
-    This library is free software; you can redistribute it and/or modify it.
+## LICENSE ##
+This library is free software; you can redistribute it and/or modify it.
