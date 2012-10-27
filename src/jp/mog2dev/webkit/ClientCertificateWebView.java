@@ -1,4 +1,4 @@
-package org.yonekawa.android.webkit;
+package jp.mog2dev.webkit;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -16,7 +16,7 @@ import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
-import org.yonekawa.android.webkit.cert.ClientCertificate;
+import jp.mog2dev.webkit.cert.ClientCertificate;
 
 /**
  * WebView enhanced to use client certificate.
@@ -24,6 +24,8 @@ import org.yonekawa.android.webkit.cert.ClientCertificate;
  */
 public class ClientCertificateWebView extends WebView
 {
+    protected ClientCertificate certificate = null;
+
     public ClientCertificateWebView( Context context )
     {
         super( context );
@@ -49,9 +51,21 @@ public class ClientCertificateWebView extends WebView
      */
     public void useCertificate( ClientCertificate certificate ) throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException, KeyManagementException, UnrecoverableKeyException, IllegalArgumentException, ClassNotFoundException, IllegalAccessException
     {
+        this.certificate = certificate;
+
         KeyStore keyStore = this.createKeyStore( certificate );
         SSLContext sslContext = this.createSSLContext( keyStore, certificate );
         this.setSslContext( sslContext );
+    }
+
+    public ClientCertificate getClientCertificate()
+    {
+        return this.certificate;
+    }
+
+    public void setClientCertificate(ClientCertificate certificate)
+    {
+        this.certificate = certificate;
     }
 
     protected KeyStore createKeyStore( ClientCertificate certificate ) throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException

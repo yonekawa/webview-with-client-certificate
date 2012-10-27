@@ -1,9 +1,10 @@
-package org.yonekawa.android.activity;
+package jp.mog2dev;
 
-import org.yonekawa.android.webkit.ClientCertificateWebView;
-import org.yonekawa.android.webkit.ClientCertificateWebViewClient;
-import org.yonekawa.android.webkit.R;
-import org.yonekawa.android.webkit.cert.ClientCertificate;
+import jp.mog2dev.webkit.ClientCertificateWebView;
+import jp.mog2dev.webkit.ClientCertificateWebViewClient;
+import jp.mog2dev.webkit.cert.ClientCertificate;
+
+import jp.mog2dev.webkit.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,7 +14,6 @@ import android.util.Log;
 
 public class HowToUseActivity extends Activity
 {
-
     /** Called when the activity is first created. */
     @Override
     public void onCreate( Bundle savedInstanceState )

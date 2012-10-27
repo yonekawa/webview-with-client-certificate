@@ -1,4 +1,4 @@
-package org.yonekawa.android.webkit.cert;
+package jp.mog2dev.webkit.cert;
 
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
